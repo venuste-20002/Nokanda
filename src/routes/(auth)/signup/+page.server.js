@@ -1,7 +1,6 @@
 import { fail, redirect } from "@sveltejs/kit";
 import { z } from "zod";
 import { supabase } from "../../../lib/supabaseClient";
-import { URL } from "$env/static/private";
 
 const validation = z.object({
   email: z
@@ -35,18 +34,14 @@ export const actions = {
     }
     return { success: true, ...data };
   },
-  github: async ({ cookies }) => {
+  github: async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
-      options: {
-        redirectTo: `${URL}/callback`,
-      },
     });
     if (error) {
-      return fail(400, {
-        message: "somewent wrong",
-      });
+      console.log(error);
+    } else {
+      return redirect(303, data.url);
     }
-    return redirect(303, data.url);
   },
 };

@@ -1,5 +1,8 @@
 <script>
   import { enhance } from "$app/forms";
+   const handleGoogleSignIn = () => {
+     signIn('google', { callbackUrl: '/protected' });
+  }; 
   export let form;
 </script>
 
@@ -12,6 +15,12 @@
 
 <form method="POST" action="?/signup" class="w-[100%] sm:w-[80%] flex flex-col gap-4  m-auto
   mt-8 p-1" use:enhance>
+  <button formaction="?/github" class="mb-[20px] w-[100%] h-[41px] text-[20px] font-bold
+  bg-principalYellow rounded-[5px] flex  justify-center items-center gap-2">
+  <iconify-icon icon="mdi:github" class="text-black text-[25px]"></iconify-icon>
+    Github
+  </button>
+  <p class="text-center text-white">OR</p>
   <div class="flex flex-col gap-2">
     <label for="emailnumber" class="text-[20px] font-inter font-[600]">Enter
      your valid email</label>
@@ -60,10 +69,6 @@
   <p class="text-principalGray text-center text-opacity-45 text-[20px]">By
     countinuing you
     agree to Nokanda terms of use and privacy policy</p>
-  <button formaction="?/github" class="mt-[50px] w-[100%] h-[41px] text-[20px] font-bold
-  bg-principalYellow rounded-[5px]">
-    Github
-  </button>
-</form>
+</form> 
 
- 
+

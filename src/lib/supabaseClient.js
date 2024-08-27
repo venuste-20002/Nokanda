@@ -1,9 +1,10 @@
-import { createClient } from "@supabase/supabase-js";
-import { PROJECT_URL, PROJECT_ANNON_KEY } from "$env/static/private";
+import {
+  PUBLIC_SUPABASE_ANON_KEY,
+  PUBLIC_SUPABASE_URL,
+} from "$env/static/public";
+import { createClient } from "@supabase/auth-helpers-sveltekit";
 
-export const supabase = createClient(PROJECT_URL, PROJECT_ANNON_KEY);
-
-export const handle = async ({ event, resolve }) => {
-  event.locals.supabase = supabase;
-  return resolve(event);
-};
+export const supabase = createClient(
+  PUBLIC_SUPABASE_URL,
+  PUBLIC_SUPABASE_ANON_KEY,
+);
