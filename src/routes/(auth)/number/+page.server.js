@@ -1,5 +1,12 @@
-import { fail } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import { z } from "zod";
+
+export const load = async (event) => {
+  if (event?.locals?.user && event?.locals?.user[0]?.phone)
+    return redirect(307, "/");
+  if (!event?.locals?.session) return redirect(307, "/auth");
+  return;
+};
 
 const validation = z.object({
   phone: z
@@ -13,7 +20,7 @@ const validation = z.object({
 });
 
 export const actions = {
-  default: async ({ request }) => {
+  default: async ({ fetch, request }) => {
     const data = await request.formData();
     const result = validation.safeParse(Object.fromEntries(data));
     if (!result.success) {
@@ -22,6 +29,21 @@ export const actions = {
         ...Object.fromEntries(data),
       });
     }
-    return { success: true, ...Object.fromEntries(data) };
+    const response = await fetch("/api/number", {
+      method: "POST",
+      body: JSON.stringify({ phone: result?.data?.phone }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      console.log(response);
+      const errorMessage = await response.json();
+      return fail(400, {
+        ...Object.fromEntries(data),
+        failed: errorMessage.message,
+      });
+    }
+    return redirect(303, "/");
   },
 };

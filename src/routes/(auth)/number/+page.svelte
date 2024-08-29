@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>Add phone umber</title>
+  <title>Add phone number</title>
 </svelte:head>
 
 <form method="POST" class="w-[100%] sm:w-[80%] flex flex-col gap-4  m-auto

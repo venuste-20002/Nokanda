@@ -11,32 +11,16 @@ const validation = z.object({
   lang: z.string().min(1, { message: "Language is required" }),
 });
 
-export const load = async () => {
-  // const { data } = await supabase.from("user").select();
-  // console.log(data);
-  // return { data };
+export const load = async ({ locals }) => {
+  if (locals?.session !== null) return redirect(303, "/");
+  return;
 };
 
 export const actions = {
-  signup: async ({ request }) => {
-    const { email, gender, lang } = Object.fromEntries(
-      await request.formData(),
-    );
-    let data = { email, gender, lang };
-    const result = validation.safeParse(data);
-
-    if (!result.success) {
-      return fail(400, {
-        error: result.error.format(),
-        ...data,
-        isLoading: false,
-      });
-    }
-    return { success: true, ...data };
-  },
-  github: async () => {
+  auth: async ({ url }) => {
+    const provider = url.searchParams.get("provider");
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "github",
+      provider: `${provider}`,
     });
     if (error) {
       console.log(error);

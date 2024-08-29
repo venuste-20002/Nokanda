@@ -7,5 +7,5 @@ export const POST = async ({ locals }) => {
     throw error(500, "Something went wrong logging you out.");
   }
 
-  return redirect(303, "/signup");
+  return redirect(303, "/auth");
 };

@@ -4,7 +4,6 @@
     import '../app.css'
     import { supabase } from '$lib/supabaseClient.js';
     import { invalidateAll } from '$app/navigation';
-    import { redirect } from '@sveltejs/kit';
 
     onMount(() => {
             const { data: { subscription } } =
