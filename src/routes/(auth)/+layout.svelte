@@ -12,4 +12,3 @@
       font-serif text-center">Nokanda</h1>
   </div> 
 </div>
-
