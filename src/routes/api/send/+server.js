@@ -24,8 +24,8 @@ export const POST = async ({ request, locals, fetch }) => {
         message: `Failed to send USSD request: ${result.statusmessage}`,
       };
     }
-    return { success: true, message: "USSD request sent successfully." };
+    return new Response("USSD request sent successfully." );
   } catch (err) {
-    return { success: false, message: `Error: ${err.message}` };
+    return new Response("USSD request sent successfully." )
   }
 };

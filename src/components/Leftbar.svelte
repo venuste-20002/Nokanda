@@ -1,5 +1,6 @@
 <script>
-
+    import Deleting from './Deleting.svelte'
+    let showModal = false;
 </script>
 
 <div class="hidden lg:block w-1/5 min-h-full shadow-lg">
@@ -65,6 +66,7 @@
         </button>
         <button
             class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            on:click={()=> (showModal = true)}
         >
             <i class="fa-solid fa-user p-2 text-secondary"></i>
             Delete Account
@@ -83,3 +85,4 @@
     </div>
 </div>
 
+<Deleting bind:showModal/>

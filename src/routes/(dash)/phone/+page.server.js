@@ -11,9 +11,9 @@ export const actions = {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: { ussdCode },
+      body:JSON.stringify({ ussdCode }),
     });
-    return { success: True };
+    return { success: true };
   },
 };
 
