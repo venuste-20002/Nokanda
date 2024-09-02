@@ -3,10 +3,6 @@
   export let form;
 </script>
 
-<svelte:head>
-  <title>Add phone number</title>
-</svelte:head>
-
 <form method="POST" class="w-[100%] sm:w-[80%] flex flex-col gap-4  m-auto
   mt-[150px] p-1" use:enhance>  
   <h1 class="text-[40px] text-center">Set a valid phone number</h1>

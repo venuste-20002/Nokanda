@@ -1,61 +1,50 @@
 <script>
-  // Define the redirectTo function within the Svelte script block
-  function redirectTo(page) {
-    // Display a message asking the user to dial the USSD code.
-    // alert('Please dial *182# on your mobile device.');
-    
-    // Redirect to the desired page.
-    window.location.href = page;
+    import { goto } from "$app/navigation";
+
+  function redirectTo(page) { 
+    goto(page);
   }
+
+  const services = [
+    {
+      name:"MTN Mobile Money",
+      link:"/money"
+    },
+    {
+      name:"MTN Airtime & Internet",
+      link:"/airtime"
+    },
+    {
+      name:"Airtel Money",
+      link:"/airtel-money"
+    },
+    {
+      name:"MoMoPay Merchant",
+      link:"/insurance"
+    },
+    {
+      name:"Insurance",
+      link:"/insurance"
+    },
+    {
+      name:"CanalBox Internet",
+      link:"/insurance"
+    },
+    {
+      name:"Rwanda Useful codes",
+      link:"/useful-codes"
+    },
+  ]
 </script>
 
-<div class="absolute top-50 lg:left-[260px] flex flex-wrap z-50 gap-4 p-4">
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/money')}
-  >
-    MTN Mobile Money
-  </button>
-
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/airtime')}
-  >
-    MTN Airtime & Internet
-  </button>
-
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/airtel-money')}
-  >
-    Airtel Money
-  </button>
-
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/momo-pay')}
-  >
-    MoMoPay Merchant *182#
-  </button>
-
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/insurance')}
-  >
-    Insurance
-  </button>
-
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/canalbox-internet')}
-  >
-    CanalBox Internet
-  </button>
-
-  <button
-    class="w-[19%] h-[150px] bg-white rounded-[10px] shadow-2xl p-4"
-    on:click={() => redirectTo('/useful-codes')}
-  >
-    Rwanda Useful Codes
-  </button>
+<div class="justify-center items-center flex gap-3 p-2 flex-wrap">
+  {#each services as s }
+      <div aria-hidden="true" class="flex justify-center items-center
+      cursor-pointer w-[80%] sm:w-[13%] h-[150px] bg-white rounded-[10px]
+      shadow-2xl p-4" on:click={()=> redirectTo(`${s.link}`)}>
+        {s.name}
+      </div>
+  {/each}
 </div>
+
+
