@@ -7,53 +7,29 @@
 
   const services = [
     {
-      name:"Send Money",
-      link:"/phone"
-    },
-    {
-      name:"MoMoPay-Merchant",
-      link:"/momo"
-    },
-    {
-      name:"Buy Electricy EUCL",
-      link:"/electricity"
-    },
-    {
-      name:"Buy MTN Airtime",
-      link:"/airtime"
-    },
-    {
-      name:"Pay Water Bill WASAC",
+      name:"Pay Water Bill-WASAC",
       link:"/water"
     },
     {
-      name:"Bill Payments",
-      link:"/bill"
+      name:"Pay Irembo Bill",
+      link:"/irembo"
     },
     {
-      name:"Bank Services",
-      link:"#"
+      name:"Pay Taxes-RRA",
+      link:"rra"
     },
     {
-      name:"Bank Services",
-      link:"#"
+      name:"Pay Tap&Go",
+      link:"/tap&go"
     },
     {
-      name:"Check MoMo Balance",
-      link:"#"
+      name:"Pay WaKA",
+      link:"waka"
     },
     {
-      name:"Pay For TV",
-      link:"#"
-    },
-    {
-      name:"My Account",
-      link:"#"
-    },
-    {
-      name:"SPENN",
-      link:"#"
-    },
+      name:"Pay MTN Post Paid Bill",
+      link:"mtnbill"
+    }
   ]
 </script>
 
