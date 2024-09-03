@@ -1,0 +1,53 @@
+<script>
+      import { enhance } from '$app/forms';
+    let amount = "";
+    let receiverCode = "";
+    let addAgentCharge = false;
+
+    $: isFormValid = amount && receiverCode;
+</script>
+
+
+<div class="w-[50%] m-auto  h-full">
+    <form use:enhance action="?/sendSMS" method="POST">
+        <div class="p-6 w-full m-auto  shadow-lg rounded-lg">
+            <div class="mb-4 p-1">
+                <label for="Amount" class="block text-gray-700 font-bold mb-2"
+                    >Enter Amount</label
+                >
+                <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    class="w-full p-2 border rounded"
+                    bind:value={amount}
+                    placeholder="Enter Amount"
+                />
+            </div>
+            <div class="mb-4 p-1">
+                <label
+                    for="merchant code"
+                    class="block text-gray-700 font-bold mb-2"
+                    >Enter Merchant Code
+                </label>
+                <input
+                    type="number"
+                    id="receiverCode"
+                    name="receiverCode"
+                    class="w-full p-2 border rounded"
+                    bind:value={receiverCode}
+                    placeholder="Enter Merchant Code"
+                />
+            </div>
+            <div class="mb-4 p-1">
+                <button
+                    type="submit"
+                    class={`w-full px-3 p-4 rounded-lg focus:outline-none focus:ring-2 ${isFormValid ? "bg-indigo-950 text-white" : "bg-stone-400 cursor-not-allowed"}`}
+                    disabled={!isFormValid}
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

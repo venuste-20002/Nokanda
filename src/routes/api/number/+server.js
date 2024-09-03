@@ -4,7 +4,7 @@ export const POST = async ({ locals, request }) => {
   try {
     const { phone } = await request.json();
     const data = await locals.session;
-    const updateUser = await supabase.from("user").insert({
+    await supabase.from("user").insert({
       phone,
       username: data.user.user_metadata.name,
       email: data.user.email,
