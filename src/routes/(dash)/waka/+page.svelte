@@ -7,53 +7,33 @@
 
   const services = [
     {
-      name:"Send Money",
+      name:"Flex Pass 50K/Month",
       link:"/phone"
     },
     {
-      name:"MoMoPay-Merchant",
+      name:"Punch W/Card 33500",
       link:"/momo"
     },
     {
-      name:"Buy Electricy EUCL",
+      name:"Punch Renewal 30K",
       link:"/electricity"
     },
     {
-      name:"Buy MTN Airtime",
+      name:"Basic Membership 60K/Month",
       link:"/airtime"
     },
     {
-      name:"Pay Water Bill WASAC",
+      name:"Basic Membership 150K/ 3 Months",
       link:"/water"
     },
     {
-      name:"Bill Payments",
+      name:"Basic Membership 300K/year",
       link:"/bill"
     },
     {
-      name:"Bank Services",
+      name:"Plus Membership 420K/year",
       link:"#"
-    },
-    {
-      name:"Bank Services",
-      link:"#"
-    },
-    {
-      name:"Check MoMo Balance",
-      link:"#"
-    },
-    {
-      name:"Pay For TV",
-      link:"#"
-    },
-    {
-      name:"My Account",
-      link:"#"
-    },
-    {
-      name:"SPENN",
-      link:"#"
-    },
+    }
   ]
 </script>
 
