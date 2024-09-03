@@ -12,11 +12,11 @@
     },
     {
       name:"MoMoPay-Merchant",
-      link:"#"
+      link:"/momo"
     },
     {
       name:"Buy Electricy EUCL",
-      link:"#"
+      link:"/electricity"
     },
     {
       name:"Buy MTN Airtime",
