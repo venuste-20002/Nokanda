@@ -8,7 +8,7 @@
   $: isFormValid = amount && receiverNumber;
 </script>
 
-<div class=" w-[50%] m-auto flex flex-wrap h-full">
+<div class="w-[90%] sm:w-[50%] m-auto flex flex-wrap h-full">
   <div class="p-6 w-full m-auto bg-slate-100 shadow-lg rounded-lg">
     <form use:enhance action="?/sendSMS" method="POST">
       <div class="mb-4 p-1">

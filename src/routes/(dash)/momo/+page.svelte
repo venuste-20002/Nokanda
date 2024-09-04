@@ -1,24 +1,30 @@
 <script>
-      import { enhance } from '$app/forms';
+    import { enhance } from '$app/forms';
+    import Alert from "../../../components/Alert.svelte";
+    import Sending from "../../../components/Sending.svelte";
     let amount = "";
     let receiverCode = "";
     let addAgentCharge = false;
-
+    export let form 
     $: isFormValid = amount && receiverCode;
 </script>
 
 
-<div class="w-[50%] m-auto  h-full">
-    <form use:enhance action="?/sendSMS" method="POST">
-        <div class="p-6 w-full m-auto  shadow-lg rounded-lg">
+{#if form?.success}
+    <Alert>
+        <p>USSD has been successfully sent</p>
+    </Alert>
+{/if}
+<Sending>
+    <form use:enhance action="/api/universal?provider=momo" method="POST">
             <div class="mb-4 p-1">
                 <label for="Amount" class="block text-gray-700 font-bold mb-2"
-                    >Enter Amount</label
+                >Enter Amount</label
                 >
                 <input
                     type="number"
                     id="amount"
-                    name="amount"
+                    name="value1"
                     class="w-full p-2 border rounded"
                     bind:value={amount}
                     placeholder="Enter Amount"
@@ -28,12 +34,12 @@
                 <label
                     for="merchant code"
                     class="block text-gray-700 font-bold mb-2"
-                    >Enter Merchant Code
+                >Enter Merchant Code
                 </label>
                 <input
                     type="number"
                     id="receiverCode"
-                    name="receiverCode"
+                    name="value2"
                     class="w-full p-2 border rounded"
                     bind:value={receiverCode}
                     placeholder="Enter Merchant Code"
@@ -48,6 +54,6 @@
                     Submit
                 </button>
             </div>
-        </div>
     </form>
-</div>
+</Sending>
+

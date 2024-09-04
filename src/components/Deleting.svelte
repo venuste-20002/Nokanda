@@ -13,7 +13,7 @@
     on:close={() => (showModal = false)}
     aria-hidden=true
     on:click|self={() => dialog.close()}
-    class="w-[50%] h-[20%] border backdrop-blur-3xl p-5
+    class="w-[90%] sm:w-[50%] min-h-[20%] border backdrop-blur-3xl p-5
     text-center rounded-lg"> 
         <p class="text-3xl font-bold">Are you sure you want to delete this account?</p>
         <div class="my-5 flex justify-center gap-5"> 

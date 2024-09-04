@@ -3,13 +3,13 @@
     let showModal = false;
 </script>
 
-<div class="hidden lg:block w-1/5 min-h-full shadow-lg">
+<div class="">
     <div class="top-0 sticky p-5">
         <button
             class="text-left w-full px-3 focus:outline-none focus:ring-2
             focus:ring-blue-500"
         >
-            <i class="fa-solid fa-save p-2 text-secondary"></i>
+            <iconify-icon icon="ion:save" class="text-[20px] text-principalYellow"></iconify-icon>
             save accounts
             <p class="text-center text-xs text-stone-500">
                 save your meter numbers etc
@@ -18,7 +18,7 @@
         <button
             class="text-left w-full px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
-            <i class="fa-solid fa-share p-2 text-secondary"></i>
+            <iconify-icon icon="ooui:share" class="text-[20px] text-principalYellow"></iconify-icon>
             share Nokanda
             <p class="text-center text-xs text-stone-500">
                 share app with friends
@@ -27,40 +27,30 @@
         <button
             class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
-            <i class="fa-solid fa-language p-2 text-secondary"></i>
+            <iconify-icon icon="fa-solid:language" class="text-[20px] text-principalYellow"></iconify-icon>
             change Language
             <p class="text-center text-xs text-stone-500"></p>
         </button>
         <button
-            class="text-left w-full flex flex-wrap px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-            <i class="fa-solid fa-user p-2 text-secondary"></i>
-            Dark Theme
-            <div
-                class="item-right w-[50px] h-[80%] rounded-2xl bg-stone-800"
-            >
-                <p class="text-white text-right p-1">Off</p>
-            </div>
-            <p class="text-center text-xs text-stone-500"></p>
-        </button>
-        <button
             class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            on:click={()=>window.open('https://www.hexakomb.com')}
         >
-            <i class="fa-solid fa-user p-2 text-secondary"></i>
+            <iconify-icon icon="material-symbols:info" class="text-[20px] text-principalYellow"></iconify-icon>
             About Nokanda
             <p class="text-center text-xs text-stone-500"></p>
         </button>
         <button
             class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
-            <i class="fa-solid fa-user p-2 text-secondary"></i>
+            <iconify-icon icon="mdi:faq" class="text-[20px] text-principalYellow"></iconify-icon>
             FAQ
             <p class="text-center text-xs text-stone-500"></p>
         </button>
         <button
             class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            on:click={()=>window.location = 'mailto:info@hexakomb.com'}
         >
-            <i class="fa-solid fa-user p-2 text-secondary"></i>
+            <iconify-icon icon="ic:baseline-email" class="text-[20px] text-principalYellow"></iconify-icon>
             Email Support
             <p class="text-center text-xs text-stone-500"></p>
         </button>
@@ -68,16 +58,16 @@
             class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             on:click={()=> (showModal = true)}
         >
-            <i class="fa-solid fa-user p-2 text-secondary"></i>
-            Delete Account
+            <iconify-icon icon="line-md:account-delete" class="text-[20px] text-principalYellow"></iconify-icon>
+                 Delete Account
             <p class="text-center text-xs text-stone-500"></p>
         </button>
         <form action="/api/logout" method="POST">
             <button
                 class="text-left w-full px-3 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-                <i class="fa-solid fa-user p-2 text-secondary"></i>
-                Logout
+                <iconify-icon icon="foundation:shield" class="text-[20px] text-principalYellow"></iconify-icon>
+                     Logout
                 <p class="text-center text-xs text-stone-500"></p>
             </button>
         </form>

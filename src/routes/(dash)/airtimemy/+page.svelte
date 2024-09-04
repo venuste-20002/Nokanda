@@ -7,7 +7,7 @@
 
 
 <div class="w-[50%] m-auto  h-full">
-  <form use:enhance action="?/sendSMS" method="POST">
+  <form use:enhance action="/api/universal?provider=rra" method="POST">
       <div class="p-6 w-full m-auto  shadow-lg rounded-lg">
           <div class="mb-4 p-1">
               <label for="Amount" class="block text-gray-700 font-bold mb-2"
@@ -16,7 +16,7 @@
               <input
                   type="number"
                   id="amount"
-                  name="amount"
+                  name="value1"
                   class="w-full p-2 border rounded"
                   bind:value={amount}
                   placeholder="Enter Amount"
