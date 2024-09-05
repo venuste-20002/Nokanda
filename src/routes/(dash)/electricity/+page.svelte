@@ -4,6 +4,8 @@
     let meteNumber = "";
 
     $: isFormValid = amount & meteNumber;
+
+    const stage = 'dash';
 </script>
 
 <div class="w-[50%] m-auto h-full">

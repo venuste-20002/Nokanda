@@ -20,7 +20,7 @@
     },
     {
       name:"Buy MTN Airtime",
-      link:"#"
+      link:"/"
     },
     {
       name:"Pay Water Bill WASAC",
@@ -28,7 +28,7 @@
     },
     {
       name:"Bill Payments",
-      link:"#"
+      link:"/bill"
     },
     {
       name:"Bank Services",

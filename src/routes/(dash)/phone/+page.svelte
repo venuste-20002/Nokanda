@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { enhance } from '$app/forms';
 
   let amount = '';
@@ -70,5 +70,5 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
 
