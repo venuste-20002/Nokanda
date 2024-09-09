@@ -18,5 +18,6 @@ export const POST = async ({ locals, cookies }) => {
     path: "/",
     expires: new Date(0),
   });
+
   return redirect(303, "/auth");
 };

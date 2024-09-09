@@ -1,6 +1,5 @@
 <script>
   export let data
-  console.log(data.user)
 </script>
 
 <div class=" w-full min-h-[100vh] bg-principalBlack

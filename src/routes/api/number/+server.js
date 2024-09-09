@@ -15,6 +15,8 @@ export const POST = async ({ locals, request }) => {
     });
   } catch (e) {
     console.log(e);
-    return e;
+    return new Response(JSON.stringify({ message: "Error" }), {
+      status: 500,
+    });
   }
 };

@@ -10,12 +10,12 @@
 
 <div class="block lg:hidden ">
         <iconify-icon aria-hidden="true" icon={!showDropdown?
-        "bi:three-dots-vertical": "material-symbols:close"} class="text-[20px]
+        "bi:three-dots-vertical": "material-symbols:close"} class="text-[30px]
         text-black" on:click={()=>showDropdown=!showDropdown}></iconify-icon>
 </div>
 
 {#if showDropdown}
-    <div class="w-[100%] bg-white text-black fixed left-0 top-24 border
+    <div class="w-[100%] min-h-[100%] bg-white text-black fixed left-0 top-24 border
         border-b-black/10 block lg:hidden">
         <div class="w-full relative" transition:slide={{easing: quintInOut,
             duration:400, axis:'y'}}>
@@ -24,4 +24,3 @@
     </div> 
 {/if}
 
-<Deleting bind:showModal/>

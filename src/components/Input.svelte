@@ -1,16 +1,14 @@
 <script>
-    export let type
-    export let id
-    export let name
+    export let id 
+    export let name 
     export let placeholder
-    export let value 
 </script>
 
 <input
-    {type}
+    type="number"
     {id}
     {name}
-    class="w-full p-2 border rounded-lg"
-    bind:value
+    class="w-full p-2 border rounded"
     {placeholder}
+    required
 />
