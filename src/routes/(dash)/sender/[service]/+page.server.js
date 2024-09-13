@@ -2,7 +2,7 @@ import { error, fail } from "@sveltejs/kit";
 
 export const load = ({ params }) => {
   let provider = params.service;
-
+  console.log("service page reached")
   const services = {
     electricity: {
       name: "Electricity Service",
