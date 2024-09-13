@@ -1,5 +1,5 @@
 <script>
-    import { goto } from "$app/navigation";
+  import { goto } from "$app/navigation";
 
   function redirectTo(page) { 
     goto(page);
@@ -8,33 +8,34 @@
   const services = [
     {
       name:"MTN Mobile Money",
-      link:"/money"
+      link:"/dash/money"
     },
     {
       name:"MTN Airtime & Internet",
-      link:"/airtime"
+      link:"/dash/airtime"
     },
     {
       name:"Airtel Money",
-      link:"/airtel-money"
+      link:"#"
     },
     {
       name:"MoMoPay Merchant",
-      link:"/insurance"
+      link:"#"
     },
     {
       name:"Insurance",
-      link:"/insurance"
+      link:"#"
     },
     {
       name:"CanalBox Internet",
-      link:"/insurance"
+      link:"#"
     },
     {
       name:"Rwanda Useful codes",
-      link:"/useful-codes"
+      link:"#"
     },
   ]
+
 </script>
 
 <div class="justify-center items-center flex gap-3 p-2 flex-wrap">

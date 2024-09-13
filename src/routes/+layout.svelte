@@ -7,13 +7,13 @@
 
     onMount(() => {
             const { data: { subscription } } =
-            supabase.auth.onAuthStateChange((event) => {
+            supabase.auth.onAuthStateChange(() => {
                 invalidateAll();
             });
             return () => {
               subscription.unsubscribe();
             };
     });
-</script>
 
+</script>
 <slot />

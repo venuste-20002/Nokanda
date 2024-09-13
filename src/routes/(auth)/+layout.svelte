@@ -1,8 +1,12 @@
+<script>
+  export let data
+</script>
+
 <div class=" w-full min-h-[100vh] bg-principalBlack
   bg-opacity-100 sm:bg-opacity-60 flex
   sm:flex-row flex-col">
   <div class="w-full border-0 bg-principalBlack text-white sm:border
-    border-black p-10 flex-1 ">
+    border-black p-1 sm:p-10 flex-1 ">
     <slot />
   </div> 
   <div class="w-full border border-black
