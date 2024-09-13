@@ -54,12 +54,13 @@ export const POST = async ({ request, locals }) => {
     return new Response(
       JSON.stringify({
         message: "USSD request sent successfully.",
+        success:true
       }),
     );
   } catch (err) {
     console.log(err);
     return new Response(
-      JSON.stringify({ message: "USSD request unable to send." }),
+        JSON.stringify({ message: "USSD request unable to send." , success:false}),
     );
   }
 };

@@ -167,11 +167,11 @@ export const actions = {
         "Content-Type": "application/json",
       },
     });
-
-    if (!response.ok) {
-      return fail(400, { failed: true });
-    }
     const result = await response.json();
-    return { success: true, message: result?.message };
+    if (!response.ok) {
+      return {success: result?.success, message:result?.message};
+    }
+   
+    return { success: result?.success, message: result?.message };
   },
 };

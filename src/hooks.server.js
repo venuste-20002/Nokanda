@@ -11,7 +11,7 @@ export async function handle({ event, resolve }) {
     .eq("providerId", session?.user?.id);
 
   if (error) console.log(error);
-  console.log(event.isDataRequest);
+  
   event.locals.user = data;
   event.locals.session = session;
   event.locals.client = supabaseClient;

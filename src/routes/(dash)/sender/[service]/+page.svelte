@@ -15,6 +15,10 @@
     <Alert type="success" message={form?.message} />
 {/if}
 
+{#if form && !form?.success}
+    <Alert type="error" message={form?.message} />
+{/if}
+
 {#if choosenService}
     <Sending>
         <p class="text-center sm:text-3xl text-2xl font-bold my-5">{choosenService.name}</p>
